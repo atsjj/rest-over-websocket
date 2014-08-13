@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="/primus/primus.js"></script>
+</head>
+<body>
+  <h1>Hello</h1>
+  <p>Open your debug console...</p>
+  <script>
+    var primus = new Primus();
+    var options = { method: 'GET', url: '/somejson' };
+
+    primus.writeAndWait(options, function() {
+      console.log.apply(console, arguments);
+    });
+  </script>
+</body>
+</html>
